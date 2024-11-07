@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Points2Map</title>
+        <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="libs/jquery-3.7.1.min.js"></script>
+        <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+        <script src="scripts/OpenLayers.js"></script>
+        <script src="index.js"></script>
+    </head>
+<body onload="init();">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Points2Map</a>
+        </div>
+    </nav>
+    <!--<div id="map"></div>-->
+
+    <!-- The modal -->
+    <div class="modal fade" id="params-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="modalLabel">Создание точки</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="inputLatitude">Широта</label>
+                            <input type="text" class="form-control" id="inputLatitude" aria-describedby="latitudeHelp" placeholder="latitude">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputLongitude">Долгота</label>
+                            <input type="text" class="form-control" id="inputLongitude" placeholder="longitude">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Submit</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

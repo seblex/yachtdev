@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>OpenSeaMap</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta http-equiv="content-language" content="en"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="SHORTCUT ICON" href="resources/icons/OpenSeaMapLogo_16.png">
+        <link rel="stylesheet" href="./javascript/ol@v7.3.0/ol.css">
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css">
+        <script src="libs/jquery-3.7.1.min.js"></script>
+        <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+        <script src="./javascript/ol@v7.3.0/ol.js"></script>
+        <script type="text/javascript" src="./javascript/translation-en.js"></script>
+        <script type="text/javascript" src="./javascript/utilities.js"></script>
+        <script type="text/javascript" src="./javascript/map_utils.js"></script>
+        <script type="text/javascript" src="./javascript/NauticalRoute.js"></script>
+        <script type="text/javascript" src="./javascript/geomagjs/cof2Obj.js"></script>
+        <script type="text/javascript" src="./javascript/geomagjs/geomag.js"></script>
+        <script type="text/javascript" src="./javascript/mag_deviation.js"></script>
+        <script type="text/javascript" src="index.js"></script>
+    </head>
+    <body onload="init();">
+        <div id="map" style="position:absolute; bottom:0px; left:0px;"></div>
+        <div class="unselectable" draggable="false" unselectable="on" id="compassRose">
+            <img id="geoCompassRose" draggable="false" unselectable="on" src="./resources/map/nautical_compass_rose_geo_north.svg"/>
+            <img id="magCompassRose" draggable="false" unselectable="on" src="./resources/map/nautical_compass_rose_mag_north.svg"/>
+            <div id="magCompassText">
+                <p id="magCompassTextTop"></p>
+                <p id="magCompassTextBottom"></p>
+            </div>
+        </div>
+
+        <!-- The modal -->
+        <div class="modal fade" id="params-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="modalLabel">Создание точки</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="inputLatitude">Широта</label>
+                                <input type="text" class="form-control" id="inputLatitude" aria-describedby="latitudeHelp" placeholder="latitude">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputLongitude">Долгота</label>
+                                <input type="text" class="form-control" id="inputLongitude" placeholder="longitude">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Submit</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
